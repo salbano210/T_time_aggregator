@@ -1,0 +1,23 @@
+
+#selenium installed on machine, importing here
+import selenium
+
+#getting webdriver from selenium
+from selenium import webdriver
+
+#settiing options such that the page will not close immediately
+options = webdriver.ChromeOptions()
+options.add_experimental_option("detach", True)
+
+#defining the driver
+driver = webdriver.Chrome(options=options)
+
+
+#site we're going to scrape
+driver.get("https://williamjdevine.cps.golf/")
+
+#getting the title of the webpage
+print(driver.title)
+
+#closing down the scraper
+driver.quit()
